@@ -34,14 +34,22 @@ const client = new Discord.Client({disableEveryone: true});
 
 const request = require('request');
 
-const prefix = '2'
+const prefix = '^'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
+client.on('ready', () => {
+   console.log(`----------------`);
+      console.log(`Neon Bot- Script By : Oveeeeer Codes`);
+        console.log(`----------------`);
+      console.log(`ON ${client.guilds.size} Servers '     Script By : Over Codes ' `);
+    console.log(`----------------`);
+  console.log(`Logged in as ${client.user.tag}!`);
+client.user.setActivity(`Neon Music "^help" | By A&M `, "https://www.twitch.tv/idk");//حقوق دايموند كودز
+client.user.setStatus("dnd")
 
-
-const devs = ["484869429327560704","495279843047374863"]
+const devs = ["499963699553894429","484869429327560704"]
  
 const adminprefix = "a!";
 client.on('message', message => {
@@ -90,7 +98,7 @@ client.on('message', message => {
   });
 const config = {
     prefix : "2",
-    owner : ['484869429327560704','495279843047374863'],
+    owner : ['484869429327560704','499963699553894429'],
 };
 //By Request of [ function ]
 var color = new Discord.RichEmbed().setColor('#000000').setColor('#36393e')
@@ -506,7 +514,7 @@ function play(guild, song, message) {
  
 
 client.on('message', message => {
-    if (message.content === ' 2help')
+    if (message.content === '^help')
 	   
     {
 	    
@@ -527,7 +535,7 @@ client.on('message', message => {
     }
 });
 client.on('message', msg => {
-    if(msg.content === '2help')
+    if(msg.content === '^help')
     msg.reply('Check Your DM :white_check_mark:')
 
 client.login(process.env.BOT_TOKEN);
