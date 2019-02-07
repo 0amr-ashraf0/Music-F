@@ -34,16 +34,16 @@ const client = new Discord.Client({disableEveryone: true});
 
 const request = require('request');
 
-const prefix = 'A'
+const prefix = '2'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
 
-const devs = ["342430414427914240"]
+const devs = ["484869429327560704","495279843047374863"]
  
-const adminprefix = "A";
+const adminprefix = "a!";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!devs.includes(message.author.id)) return;
@@ -89,8 +89,8 @@ client.on('message', message => {
  
   });
 const config = {
-    prefix : "A",
-    owner : ['342430414427914240'],
+    prefix : "2",
+    owner : ['484869429327560704','495279843047374863'],
 };
 //By Request of [ function ]
 var color = new Discord.RichEmbed().setColor('#000000').setColor('#36393e')
@@ -506,10 +506,13 @@ function play(guild, song, message) {
  
 
 client.on('message', message => {
-    if (message.content === ' Ahelp') {
+    if (message.content === ' 2help')
+	   
+    {
+	    
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**أوامر الميوزك**')
-        .setDescription('** ( $ ) برفكس البوت**')
+        .setDescription('** ( 2 ) برفكس البوت**')
         .addField('Play أوامر', '1.play    2.p    3.search    4.ply')
         .addField('Skip أوامر', '1.Skip    2.ski    3.s    4.sk')
         .addField('Stop أوامر', '1.Stop    2.st    3.sto')
@@ -520,8 +523,11 @@ client.on('message', message => {
         .addField('Resume أوامر', '1.resume    2.r    3.continue    4.res')
         .addField('Repeat أوامر', '1.repeat    2.rpt')
 		.addField('Loop أوامر', '1.loop    2.lo')
-      message.channel.send(helpEmbed);
+      message.author.send(helpEmbed);
     }
 });
+client.on('message', msg => {
+    if(msg.content === '2help')
+    msg.reply('Check Your DM :white_check_mark:')
 
 client.login(process.env.BOT_TOKEN);
